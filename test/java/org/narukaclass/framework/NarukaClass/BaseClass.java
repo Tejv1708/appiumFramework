@@ -15,7 +15,7 @@ import io.appium.java_client.service.local.AppiumServiceBuilder;
 
 public class BaseClass {
 
-	public AndroidDriver driver;
+	public  AndroidDriver driver;
 	public AppiumDriverLocalService service;
 
 	@BeforeClass
@@ -33,7 +33,6 @@ public class BaseClass {
 
 		AndroidDriver driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
 
-		driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
 	}

@@ -9,20 +9,19 @@ import org.tejveermaruka.utils.AndroidActions;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 
-
-public class FormPage {
-	AndroidDriver driver ;
+public class FormPage extends AndroidActions {
+	AndroidDriver driver;
 
 	public FormPage(AndroidDriver driver) {
-//		super(driver) ;
+		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
 	@FindBy(id = "com.androidsample.generalstore:id/nameField")
 	private WebElement nameField;
-	
-	@FindBy(xpath= "//android.widget.RadioButton[@text ='Female']")
+
+	@FindBy(xpath = "//android.widget.RadioButton[@text ='Female']")
 	private WebElement femaleOptions;
 
 	@FindBy(xpath = "//android.widget.RadioButton[@text ='Male']")
@@ -33,7 +32,6 @@ public class FormPage {
 
 	@FindBy(id = "com.androidsample.generalstore:id/btnLetsShop")
 	private WebElement shopButton;
-	
 
 	public void setNameField(String name) {
 		nameField.sendKeys(name);
@@ -52,17 +50,15 @@ public class FormPage {
 		scrollToText(countryName);
 		driver.findElement(By.xpath("//android.widget.TextView[@text='" + countryName + "']")).click();
 	}
-	
+
 	public void sumbmitForm() {
 		shopButton.click();
 
 	}
-	
 
 	public void scrollToText(String text) {
 		driver.findElement(AppiumBy
 				.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"" + text + "\"));"));
 	}
 
-	
 }

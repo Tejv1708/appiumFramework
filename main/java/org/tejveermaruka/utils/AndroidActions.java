@@ -14,10 +14,9 @@ public class AndroidActions {
 
 	AndroidDriver driver;
 
-	
 	public AndroidActions(AndroidDriver driver) {
 		this.driver = driver;
-		
+
 	}
 
 	public void longPressAction(WebElement ele) {
@@ -48,5 +47,4 @@ public class AndroidActions {
 
 	}
 
-	
 }
